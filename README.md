@@ -1,4 +1,4 @@
-# k-lab-assignments
+# k-lab-assignments - React js
 ### To Run the project
 
 - Clone the repository by running the command;
