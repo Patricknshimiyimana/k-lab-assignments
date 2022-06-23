@@ -3,6 +3,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { apiURL } from "../util/apiUrl";
 import SearchInput from "./SearchInput";
+import FilterCountry from "./FilterCountry";
 
 const AllCountries = () => {
   const [countries, setCountries] = useState([]);
@@ -35,14 +36,34 @@ const AllCountries = () => {
   }
   }
 
+  const getCountryByRegion = async (regionName) => {
+    try {
+      const res = await axios.get(`${apiURL}/region/${regionName}`);
+
+      const data = await res.data;
+      setCountries(data);
+
+      setIsLoading(false);
+    } catch (error) {
+      setIsLoading(false);
+      setError(false);
+    }
+  };
+
   useEffect(() => {
     getAllCountries();
   }, []);
 
   return (
     <div className="all__country__wrapper">
-    <div className="country_top">
-        <SearchInput onSearch={getCountryByName}/>
+    <div className="country__top">
+        <div className="search">
+          <SearchInput onSearch={getCountryByName}/>
+        </div>
+
+        <div className="filter">
+          <FilterCountry onSelect={getCountryByRegion} />
+      </div>
     </div>
  
     <div className="country__bottom">
