@@ -86,11 +86,10 @@ const App = () => {
   return (
     <div className="app">
       <nav>
-        <h1>BLOG</h1>
+        <h2>BLOG</h2>
       </nav>
 
       <div className="add-post-container">
-        <h2>Create new posts</h2>
         <form onSubmit={handleSubmit}>
           <label for="title">title</label>
           <input
