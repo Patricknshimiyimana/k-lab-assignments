@@ -1,4 +1,5 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState, useRef, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 function Login() {
     const [email, setEmail] = useState('');
@@ -26,6 +27,10 @@ function Login() {
                 />
                 <div style={{ marginTop: '30px' }}>
                     <input type="submit" value="Login" />
+                </div>
+                <div style={{ marginTop: '30px' }}>
+                    <p>Don't have an account?</p>
+                    <Link to={'/register'}>register!</Link>
                 </div>
             </form>
         </div>
