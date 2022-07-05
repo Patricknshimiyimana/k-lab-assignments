@@ -1,13 +1,22 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function Header({ setIsAdding }) {
+
+    let Navigate = useNavigate();
+    
+    const logoutHandler = () => {
+        localStorage.removeItem("userData");
+        Navigate("/")
+    }
     return (
         <header>
-            <h1>Employee Management Software</h1>
+            <div style={{"display": "flex", "justifyContent": "space-between"}}>
+                <h1>Employee Management Software</h1>
+                <Link to={'/'}><button className='round-button' onClick={logoutHandler}>Logout</button></Link>
+            </div>
             <div style={{ marginTop: '30px', marginBottom: '18px' }}>
-                <button onClick={() => setIsAdding(true)} className='round-button'>Add New Employee</button>
-                <Link to={'/'}><button className='round-button'>Logout</button></Link>
+                <button onClick={() => setIsAdding(true)} className='round-button'>Add Employee</button>
             </div>
         </header>
     )

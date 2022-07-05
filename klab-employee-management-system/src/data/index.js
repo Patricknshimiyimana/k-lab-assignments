@@ -4,7 +4,7 @@ const employeesData = [
     firstName: 'Susan',
     lastName: 'Jordon',
     email: 'susan@example.com',
-    salary: '95000',
+    position: 'software developer',
     date: '2019-04-11'
   },
   {
@@ -12,7 +12,7 @@ const employeesData = [
     firstName: 'Adrienne',
     lastName: 'Doak',
     email: 'adrienne@example.com',
-    salary: '80000',
+    position: 'software developer',
     date: '2019-04-17'
   },
   {
@@ -20,7 +20,7 @@ const employeesData = [
     firstName: 'Rolf',
     lastName: 'Hegdal',
     email: 'rolf@example.com',
-    salary: '79000',
+    position: 'software developer',
     date: '2019-05-01'
   },
   {
@@ -28,7 +28,7 @@ const employeesData = [
     firstName: 'Kent',
     lastName: 'Rosner',
     email: 'kent@example.com',
-    salary: '56000',
+    position: 'software developer',
     date: '2019-05-03'
   },
   {
@@ -36,7 +36,7 @@ const employeesData = [
     firstName: 'Arsenio',
     lastName: 'Grant',
     email: 'arsenio@example.com',
-    salary: '65000',
+    position: 'software developer',
     date: '2019-06-13'
   },
   {
@@ -44,7 +44,7 @@ const employeesData = [
     firstName: 'Laurena',
     lastName: 'Lurie',
     email: 'laurena@example.com',
-    salary: '120000',
+    position: 'software developer',
     date: '2019-07-30'
   },
   {
@@ -52,7 +52,7 @@ const employeesData = [
     firstName: 'George',
     lastName: 'Tallman',
     email: 'george@example.com',
-    salary: '90000',
+    position: 'software developer',
     date: '2019-08-15'
   },
   {
@@ -60,7 +60,7 @@ const employeesData = [
     firstName: 'Jesica',
     lastName: 'Watlington',
     email: 'jesica@example.com',
-    salary: '60000',
+    position: 'software developer',
     date: '2019-10-10'
   },
   {
@@ -68,7 +68,7 @@ const employeesData = [
     firstName: 'Matthew',
     lastName: 'Warren',
     email: 'matthew@example.com',
-    salary: '71000',
+    position: 'software developer',
     date: '2019-10-15'
   },
   {
@@ -76,7 +76,7 @@ const employeesData = [
     firstName: 'Lyndsey',
     lastName: 'Follette',
     email: 'lyndsey@example.com',
-    salary: '110000',
+    position: 'software developer',
     date: '2020-01-15'
   }
 ];

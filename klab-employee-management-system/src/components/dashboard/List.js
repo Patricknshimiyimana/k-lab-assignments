@@ -13,12 +13,11 @@ function List({ employees, handleEdit, handleDelete }) {
             <table className='striped-table'>
                 <thead>
                     <tr>
-                        <th>No.</th>
+                        <th>ID.</th>
                         <th>First Name</th>
                         <th>Last Name</th>
                         <th>Email</th>
-                        <th>Salary</th>
-                        <th>Date</th>
+                        <th>Position</th>
                         <th colSpan={2} className="text-center">
                             Actions
                         </th>
@@ -32,8 +31,7 @@ function List({ employees, handleEdit, handleDelete }) {
                                 <td>{employee.firstName}</td>
                                 <td>{employee.lastName}</td>
                                 <td>{employee.email}</td>
-                                <td>{formatter.format(employee.salary)}</td>
-                                <td>{employee.date} </td>
+                                <td>{employee.position}</td>
                                 <td className="text-right">
                                     <button
                                         onClick={() => handleEdit(employee.id)}

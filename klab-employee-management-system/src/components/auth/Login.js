@@ -1,14 +1,52 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
+import axios from 'axios';
+import Swal from 'sweetalert2';
 
-function Login() {
+function Login({ setLogoutUser }) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [error, setError] = useState("");
+    let navigate = useNavigate();
+
+    const login = (e) => {
+        e.preventDefault();
+        axios
+          .post("http://localhost:8000/auth/login", {
+            email,
+            password,
+          })
+          .then((response) => {
+            console.log("response", response);
+            localStorage.setItem(
+              "userData",
+              JSON.stringify({
+                userLoggedIn: true,
+                token: response.data.access_token,
+              })
+            );
+            setError("");
+            setEmail("");
+            setPassword("");
+            // setLogoutUser(false);
+            navigate("/dashboard");
+
+            Swal.fire({
+                icon: 'success',
+                title: 'Logged in!',
+                text: `user ${email} logged in successfully.`,
+                showConfirmButton: false,
+                timer: 2000
+            });
+          })
+          .catch((error) => setError(error.message));
+      };
 
     return (
         <div className="small-container">
-             <form >
+             <form onSubmit={login}>
                 <h1>Login</h1>
+                {error && <p style={{ color: "red" }}>{error}</p>}
                 <label htmlFor="email">Email</label>
                 <input
                     id="email"

@@ -5,6 +5,7 @@ function Register() {
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState('');
+    const [position, setPosition] = useState('');
     const [password, setPassword] = useState('');
     const [age, setAge] = useState('');
 
@@ -77,6 +78,14 @@ function Register() {
                     value={email}
                     onChange={e => setEmail(e.target.value)}
                 />
+                <label htmlFor="position">Position</label>
+                <input
+                    id="position"
+                    type="text"
+                    name="text"
+                    value={position}
+                    onChange={e => setPosition(e.target.value)}
+                />
                 <label htmlFor="password">Password</label>
                 <input
                     id="password"
@@ -85,7 +94,7 @@ function Register() {
                     value={password}
                     onChange={e => setPassword(e.target.value)}
                 />
-                <label htmlFor="salary">Age (Years)</label>
+                <label htmlFor="age">Age (Years)</label>
                 <input
                     id="age"
                     type="number"
