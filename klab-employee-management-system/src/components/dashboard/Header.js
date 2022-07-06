@@ -6,18 +6,17 @@ import { employeesData } from "../../data/index";
 import { CSVLink } from "react-csv";
 
 function Header({ setIsAdding }) {
-  const data = [];
-  employeesData.forEach((element) => {
-    data.push([
-      element.id,
-      element.firstName,
-      element.lastName,
-      element.email,
-      element.position,
-    ]);
-  });
-
   const exportToPdfHandler = () => {
+    const data = [];
+    employeesData.forEach((element) => {
+      data.push([
+        element.id,
+        element.firstName,
+        element.lastName,
+        element.email,
+        element.position,
+      ]);
+    });
     const doc = new jsPDF();
     console.log(data);
     autoTable(doc, {
@@ -29,20 +28,20 @@ function Header({ setIsAdding }) {
   };
 
   const fileHeaders = [
+    { label: "ID", key: "id"},
     { label: "First Name", key: "firstName" },
     { label: "Last Name", key: "lastName" },
     { label: "Email", key: "email" },
     { label: "Position", key: "position" },
   ];
 
-//   const csvData = [[data]];
-
   const csvReport = {
     data: employeesData,
     headers: fileHeaders,
-    filename: 'Klab_employees_list.csv'
+    filename: "Klab_employees_list.csv",
   };
-  console.log(csvReport)
+  console.log(csvReport);
+
 
   let Navigate = useNavigate();
 
@@ -72,9 +71,7 @@ function Header({ setIsAdding }) {
         <button onClick={exportToPdfHandler} className="round-button">
           Export data to pdf
         </button>
-        <CSVLink
-          {...csvReport}
-        >
+        <CSVLink {...csvReport}>
           <button className="round-button">Export data to csv</button>
         </CSVLink>
         ;
