@@ -5,6 +5,7 @@ import Home from './components/landing/Home';
 import Login from './components/auth/Login';
 import Dashboard from './components/dashboard/index';
 import Register from './components/auth/Register';
+import EmployeePage from './components/employees/EmployeePage';
 
 function App() {
   const [logoutUser, setLogoutUser] = useState(false);
@@ -15,8 +16,8 @@ function App() {
           <Route path='/' element={<Home/>}/>
           <Route path='/register' element={<Register/>}/>
           <Route path='/login' element={<Login/>} setLogoutUser={setLogoutUser}/>
-
           <Route path='/dashboard' element={<Dashboard/>}/>
+          <Route path='/employee-page' element={<EmployeePage/>} />
         </Routes>
       </BrowserRouter>
     </div>

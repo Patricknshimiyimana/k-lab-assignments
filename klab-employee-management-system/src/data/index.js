@@ -60,14 +60,14 @@ const employeesData = [
     firstName: 'Matthew',
     lastName: 'Warren',
     email: 'matthew@example.com',
-    position: 'software developer'
+    position: 'software developer',
   },
   {
     id: 10,
     firstName: 'Lyndsey',
     lastName: 'Follette',
     email: 'lyndsey@example.com',
-    position: 'software developer'
+    position: 'software developer',
   }
 ];
 

@@ -19,6 +19,9 @@ function Header({ setIsAdding }) {
     });
     const doc = new jsPDF();
     console.log(data);
+
+    // const title = "Klab employees Report";
+    // doc.text(title)
     autoTable(doc, {
       head: [["ID.", "First Name", "Last Name", "Email", "Position"]],
       body: data, // Must be arrays instead of objects!! that's the reason for Foreach to structure all elements
@@ -74,7 +77,6 @@ function Header({ setIsAdding }) {
         <CSVLink {...csvReport}>
           <button className="round-button">Export data to csv</button>
         </CSVLink>
-        ;
       </div>
     </header>
   );
