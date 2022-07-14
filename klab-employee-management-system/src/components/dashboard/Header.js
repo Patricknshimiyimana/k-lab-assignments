@@ -55,7 +55,7 @@ function Header({ setIsAdding }) {
   return (
     <header>
       <div style={{ display: "flex", justifyContent: "space-between" }}>
-        <h1>Employee Management Software</h1>
+        <h1>Employee Management System</h1>
         <Link to={"/"}>
           <button className="round-button" onClick={logoutHandler}>
             Logout

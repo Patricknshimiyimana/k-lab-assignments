@@ -8,13 +8,12 @@ function Edit({ employees, selectedEmployee, setEmployees, setIsEditing }) {
     const [firstName, setFirstName] = useState(selectedEmployee.firstName);
     const [lastName, setLastName] = useState(selectedEmployee.lastName);
     const [email, setEmail] = useState(selectedEmployee.email);
-    const [salary, setSalary] = useState(selectedEmployee.salary);
-    const [date, setDate] = useState(selectedEmployee.date);
+    const [position, setPosition] = useState(selectedEmployee.position);
 
     const handleUpdate = e => {
         e.preventDefault();
 
-        if (!firstName || !lastName || !email || !salary || !date) {
+        if (!firstName || !lastName || !email || !position) {
             return Swal.fire({
                 icon: 'error',
                 title: 'Error!',
@@ -28,8 +27,7 @@ function Edit({ employees, selectedEmployee, setEmployees, setIsEditing }) {
             firstName,
             lastName,
             email,
-            salary,
-            date
+            position
         };
 
         for (let i = 0; i < employees.length; i++) {
@@ -79,21 +77,13 @@ function Edit({ employees, selectedEmployee, setEmployees, setIsEditing }) {
                     value={email}
                     onChange={e => setEmail(e.target.value)}
                 />
-                <label htmlFor="salary">Salary ($)</label>
+                <label htmlFor="position">Position</label>
                 <input
-                    id="salary"
-                    type="number"
-                    name="salary"
-                    value={salary}
-                    onChange={e => setSalary(e.target.value)}
-                />
-                <label htmlFor="date">Date</label>
-                <input
-                    id="date"
-                    type="date"
-                    name="date"
-                    value={date}
-                    onChange={e => setDate(e.target.value)}
+                    id="position"
+                    type="text"
+                    name="position"
+                    value={position}
+                    onChange={e => setPosition(e.target.value)}
                 />
                 <div style={{ marginTop: '30px' }}>
                     <input type="submit" value="Update" />

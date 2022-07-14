@@ -1,5 +1,9 @@
-import { configureStore } from '@reduxjs/toolkit'
+import { configureStore } from '@reduxjs/toolkit';
+import toDoReducer from '../features/Reducers/todoSlider';
 
 export const store = configureStore({
-  reducer: {},
+  reducer: {
+    // allows you create n number of sliders
+    toDo: toDoReducer,
+ },
 })
